@@ -12,3 +12,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+        precios: []
+    };
+  },
+  created() {
+    this.precios = data
+    console.log(this.precios)
+  },
+  methods: {
+    
+  },
+}).mount('#app');
