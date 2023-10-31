@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-
+    <link rel="stylesheet" href="Resources/Styles/parallax.css" />
     <link rel="stylesheet" href="Resources/Styles/styles.css" />
     <link rel="stylesheet" href="Resources/Styles/about_us.css" />
 
@@ -241,30 +241,26 @@
           </div>
 
           <!-- SECCION DE SERVICIOS -->
+
           <section
             class="pricing d-flex flex-column align-items-center"
             id="pricing"
             style="padding: 5%"
           >
             <!--Cards-->
-            <h2 class="text-center" style="color: var(--maincolor); margin: 3%">
-              Pricing(esto deberia generarse con un v-for de la base de datos)
+            <h2 class="text-center" style="color: var(--fithcolor); margin: 3%">
+              Pricing
             </h2>
             <div class="d-flex flex-wrap justify-content-center gap-4">
               <div class="col-md-4" v-for="precio of precios">
-                <div
-                  class="card"
-                  style="background-color: var(--secondcolor); color: white"
-                >
-                  <div class="card-body">
-                    <h3 class="card-title">{{precio.title}}</h3>
-                    <p class="card-text">{{precio.description}}</p>
-                    <p class="card-text">{{precio.price}}</p>
-                    <div>
-                      <img :src="precio.image_url" :alt="precio.title" />
+                <div class="container">
+                  <div class="services">
+                    <div class="content">
+                      <h2>{{precio.title}}</h2>
+                      <p>{{precio.price}}</p>
+                      <p>{{precio.description}}</p>
+                      <a href="#contactus">Contrat US</a>
                     </div>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
                   </div>
                 </div>
               </div>
@@ -272,72 +268,67 @@
           </section>
 
           <!-- FORMULARIO DE CONTACTO -->
+          <form action="enviar_formulario.php" method="post">
+            <div class="container">
+              <h2
+                class="text-center"
+                style="color: var(--fithcolor); margin: 3%"
+              >
+                Contact Us!
+              </h2>
 
-          <section class="contactUs" id="contactus">
-            <h2 class="text-center" style="color: var(--fithcolor); margin: 3%">
-              Contct Us!
-            </h2>
-            <form action="enviar_formulario.php">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Insert your name"
-                  style="background-color: var(--thirdcolor)"
-                />
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="nombre" required="required" />
+                    <span class="text">First Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
               </div>
-
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Enter your email"
-                  style="background-color: var(--thirdcolor)"
-                />
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="apellido" required="required" />
+                    <span class="text">Last Name</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
               </div>
-
-              <div class="form-group">
-                <label for="phone">Phone number</label>
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="phone"
-                  placeholder="Enter your phone number"
-                  style="background-color: var(--thirdcolor)"
-                />
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="email" required="required" />
+                    <span class="text">Email</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
               </div>
-
-              <div class="form-group">
-                <label for="reason">Reason for Contact</label>
-                <textarea
-                  class="form-control"
-                  id="reason"
-                  rows="3"
-                  placeholder="
-                  Write the reason for your contact"
-                  style="background-color: var(--thirdcolor)"
-                ></textarea>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox">
+                    <input type="text" name="telefono" required="required" />
+                    <span class="text">Phone number</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
               </div>
-
-              <div class="text-center">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  style="
-                    width: 60%;
-                    background-color: var(--thirdcolor);
-                    border-color: var(--thirdcolor);
-                  "
-                >
-                  Enviar
-                </button>
+              <div class="row100">
+                <div class="col">
+                  <div class="inputBox textarea">
+                    <textarea name="mensaje" required="required"></textarea>
+                    <span class="text">Type your message</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
               </div>
-            </form>
-          </section>
+              <div class="row100">
+                <div class="col btn">
+                  <input type="submit" name="submit" value="Send" />
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </main>
       <!-- FOOTER -->
@@ -429,5 +420,14 @@
       src="https://kit.fontawesome.com/d8c4cf2db5.js"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="Resources/js/vanilla-tilt.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".services"), {
+        max: 25,
+        speed: 800,
+        glare: true,
+        "max-glare": 1,
+      });
+    </script>
   </body>
 </html>

@@ -20,22 +20,10 @@ body {
   font-size: 1.2rem !important;
 }
 
-/* NavBar */
-.navBar {
-  min-height: 15vh;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-image: linear-gradient(
-    to bottom,
-    var(--maincolor),
-    var(--secondcolor)
-  );
-}
-
+/* NAVBAR */
 #menuToggle {
   display: block;
-  position: relative;
+  position: fixed;
   top: 50px;
   left: 50px;
   max-width: 10vh;
@@ -54,7 +42,7 @@ body {
 }
 
 #menuToggle a:hover {
-  color: tomato;
+  color: var(--thirdcolor);
 }
 
 #menuToggle input {
@@ -214,11 +202,7 @@ h1 {
 
 /* ABOUT US */
 .aboutUs {
-  background-image: linear-gradient(
-    to bottom,
-    var(--thirdcolor),
-    var(--fithcolor)
-  );
+  background-color: var(--thirdcolor);
 }
 
 .cardNuestra {
@@ -228,11 +212,61 @@ h1 {
 /* PRICING */
 
 .pricing {
-  background-image: linear-gradient(
-    to bottom,
-    var(--fithcolor),
-    var(--maincolor)
-  );
+  background-color: var(--maincolor);
+}
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+.container .services {
+  position: relative;
+  width: 120%;
+  height: 120%;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+.container .services .content {
+  padding: 20px;
+  text-align: center;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.container .services:hover .content {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.container .services .content p {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+}
+
+.container .services .content a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 /* FORM DE CONTACTO */
 .contactUs {
@@ -400,4 +434,121 @@ label {
     margin-right: 0;
     font-weight: 600;
   }
+}
+
+.container {
+  width: 80%;
+  padding: 20px;
+}
+
+.container h2 {
+  width: 100%;
+  color: var(--fithcolor);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.container .row100 {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.container .row100 .col {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 10px;
+  transition: 0.5s;
+}
+
+.container .row100 .inputBox {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: var(--fithcolor);
+}
+.container .row100 .inputBox input,
+.container .row100 .inputBox.textarea textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 0 10px;
+  z-index: 1;
+  color: var(--fourthcolor);
+}
+.container .row100 .inputBox .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.container .row100 .inputBox input:focus + .text,
+.container .row100 .inputBox input:valid + .text {
+  top: -35px;
+  left: -10px;
+}
+
+.container .row100 .inputBox .line {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--fithcolor);
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.container .row100 .inputBox input:focus ~ .line,
+.container .row100 .inputBox input:valid ~ .line {
+  height: 100%;
+}
+.container .row100 .inputBox.textarea {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+}
+.container .row100 .inputBox.textarea textarea {
+  height: 100%;
+  resize: none;
+}
+.container .row100 .inputBox textarea:focus + .text,
+.container .row100 .inputBox textarea:valid + .text {
+  top: -35px;
+  left: -10px;
+}
+.container .row100 .inputBox textarea:focus ~ .line,
+.container .row100 .inputBox textarea:valid ~ .line {
+  height: 100%;
+}
+
+input[type="submit"] {
+  border: none;
+  padding: 7px 35px;
+  cursor: pointer;
+  outline: none;
+  background: #45f3ff;
+  color: #000;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.btn {
+  margin-left: auto;
+  margin-right: auto;
 }
