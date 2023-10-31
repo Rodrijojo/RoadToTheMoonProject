@@ -542,7 +542,7 @@ input[type="submit"] {
 }
 
 .cardService:hover {
-  width: 600px; /* Cambia el ancho cuando se hace hover */
+  width: 500px; /* Cambia el ancho cuando se hace hover */
   height: 500px; /* Cambia la altura cuando se hace hover */
 }
 
