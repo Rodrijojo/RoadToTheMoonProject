@@ -243,7 +243,7 @@
           <!-- SECCION DE SERVICIOS -->
 
           <section
-            class="pricing d-flex flex-column align-items-center"
+            class="pricing d-flex flex-column align-items-center slash"
             id="pricing"
             style="padding: 5%"
           >
@@ -252,7 +252,7 @@
               Pricing
             </h2>
             <div class="d-flex flex-wrap justify-content-center gap-4">
-              <div class="col-md-4" v-for="precio of precios">
+              <div class="col-12 col-md-4" v-for="precio of precios">
                 <div class="container">
                   <div class="services">
                     <div class="content">
@@ -268,7 +268,7 @@
           </section>
 
           <!-- FORMULARIO DE CONTACTO -->
-          <form action="enviar_formulario.php" method="post">
+          <form action="enviar_formulario.php" method="post" id="contactus">
             <div class="container">
               <h2
                 class="text-center"
