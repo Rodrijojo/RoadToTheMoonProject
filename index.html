@@ -241,27 +241,22 @@
           </div>
 
           <!-- SECCION DE SERVICIOS -->
-
           <section
-            class="pricing d-flex flex-column align-items-center slash"
-            id="pricing"
-            style="padding: 5%"
+            class="containerServices d-flex flex-wrap align-items-center justify-content-center"
           >
-            <!--Cards-->
-            <h2 class="text-center" style="color: var(--fithcolor); margin: 3%">
-              Pricing
-            </h2>
-            <div class="d-flex flex-wrap justify-content-center gap-4">
-              <div class="col-12 col-md-4" v-for="precio of precios">
-                <div class="container">
-                  <div class="services">
-                    <div class="content">
-                      <h2>{{precio.title}}</h2>
-                      <p>{{precio.price}}</p>
-                      <p>{{precio.description}}</p>
-                      <a href="#contactus">Contrat US</a>
-                    </div>
-                  </div>
+            <div class="cardService" v-for="precio of precios">
+              <div class="linesService"></div>
+              <div class="imgBxService">
+                <img src="Resources/assets/coding.png" alt="" />
+              </div>
+              <div
+                class="contentService d-flex flex-column justify-content-center align-items-end"
+              >
+                <div class="detaisService">
+                  <h2>{{precio.title}}</h2>
+                  <p>{{precio.description}}</p>
+                  <p>{{precio.price}}</p>
+                  <a href="#contactus">Hire US</a>
                 </div>
               </div>
             </div>

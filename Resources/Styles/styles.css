@@ -523,3 +523,195 @@ input[type="submit"] {
     font-weight: 600;
   }
 }
+
+.containerServices {
+  background-color: var(--secondcolor);
+  position: relative;
+  min-height: 90vh;
+  /* background: #333 !important; */
+  padding: 80px 40px;
+  gap: 80px;
+}
+
+.cardService {
+  position: relative;
+  width: 350px;
+  height: 180px;
+  background: #333 !important;
+  transition: 0.5s;
+}
+
+.cardService:hover {
+  width: 600px; /* Cambia el ancho cuando se hace hover */
+  height: 500px; /* Cambia la altura cuando se hace hover */
+}
+
+.cardService .linesService {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+.cardService .linesService::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 120px;
+  background: linear-gradient(
+    transparent,
+    #45f3ff,
+    #45f3ff,
+    #45f3ff,
+    transparent
+  );
+  animation: animate 4s linear infinite;
+  /* animation-play-state: paused; */
+}
+
+.cardService:hover .linesService::before {
+  animation-play-state: paused;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.cardService .linesService::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #292929;
+}
+
+.cardService .imgBxService {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translateX(-50%);
+  background: #000;
+  transition: 0.5s;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardService:hover .imgBxService {
+  top: 25px;
+  width: 200px;
+  height: 200px;
+}
+
+.cardService .imgBxService::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    transparent,
+    #ff3c7b,
+    #ff3c7b,
+    #ff3c7b,
+    transparent
+  );
+  animation: animate2 6s linear infinite;
+  /* animation-play-state: paused; */
+}
+
+.cardService:hover .imgBxService::before {
+  animation-play-state: running;
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.cardService .imgBxService::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #292929;
+}
+
+.cardService .imgBxService img {
+  position: absolute;
+  width: 100px;
+  z-index: 1;
+  filter: invert(1);
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.cardService:hover .imgBxService img {
+  opacity: 1;
+}
+
+.cardService .contentService {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* align-items: flex-end; */
+  overflow: hidden;
+}
+
+.cardService .contentService .detaisService {
+  padding: 30px 20px;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(115px);
+}
+
+.cardService :hover .contentService .detaisService {
+  transform: translateY(0px);
+}
+
+.cardService .contentService .detaisService h2 {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #45f3ff;
+  line-height: 1.2em;
+}
+
+.cardService .contentService .detaisService p {
+  color: #fff;
+  font-size: 0.7em;
+  opacity: 0;
+  transition: 0.5;
+}
+
+.cardService:hover .contentService .detaisService a {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #45f3ff;
+  color: #292929;
+  margin-top: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.cardService:hover .contentService .detaisService p,
+.cardService:hover .contentService .detaisService a {
+  opacity: 1;
+}
